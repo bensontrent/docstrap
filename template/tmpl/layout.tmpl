@@ -86,15 +86,20 @@
 
 <script>
 $( function () {
-	$( "[id*='$']" ).each( function () {
-		var $this = $( this );
+	// $( "[id*='$']" ).each( function () {
+	// 	var $this = $( this );
 
-		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-	} );
+	// 	$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	// } );
+
+  $("h1,h2,h3,h4").each(function() {
+  	$(this).css('padding-top', 70).css('margin-top', -70);
+  });
 
 	$( "#toc" ).toc( {
 		anchorName  : function ( i, heading, prefix ) {
-			return $( heading ).attr( "id" ) || ( prefix + i );
+			// return $( heading ).attr( "id" ) || ( prefix + i );
+			return ( prefix + i );
 		},
 		selectors   : "h1,h2,h3,h4",
 		showAndHide : false,
@@ -145,7 +150,7 @@ $( function () {
 <script>
 	$( function () {
 		$( '#main' ).localScroll( {
-			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
+			offset : { top : -60 } //offset by the height of your header (give or take a few px, see what works for you)
 		} );
 		$( "dt.name" ).each( function () {
 			var $this = $( this ).find("h4");

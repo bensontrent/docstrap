@@ -7,14 +7,14 @@ $.fn.toc = function(options) {
   var headings = $(opts.selectors, container);
   var headingOffsets = [];
   var activeClassName = opts.prefix+'-active';
-  var navbarHeight = $('.navbar').height();
+  // var navbarHeight = $('.navbar').height();
 
   var scrollTo = function(e) {
     if (opts.smoothScrolling) {
       e.preventDefault();
       var elScrollTo = $(e.target).attr('href').replace('#.', '#\\.');
       var $el = $(elScrollTo);
-      var offsetTop = $el.offset().top - navbarHeight;
+      var offsetTop = $el.offset().top;// - navbarHeight;
 
       $('body,html').animate({ scrollTop: offsetTop }, 400, 'swing', function() {
         location.hash = elScrollTo;
