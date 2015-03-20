@@ -5,8 +5,22 @@ var self = this;
 ?>
 <hr>
 <dt>
-    <h4 class="name" id="<?js= id ?>"><?js=   (kind === 'class' ? 'new ' : '') + data.prefixSymbol + name + (kind !== 'event' ? data.signature : '') ?></h4>
-    
+    <h4 class="name" id="<?js= id ?>"><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='~'? 'inner': '' ?> <?js= (kind === 'class' ? 'new ' : 'function ') ?><b><?js= name ?></b><?js= (kind !== 'event' ? data.signature : '') ?>
+        <?js if (data.returns && returns.length) { ?>
+        <?js= '>' ?>
+        <?js
+            var outputArray = [];
+            returns.forEach(function(ret) {
+                if (ret.type && ret.type.names)
+                {
+                    outputArray.push( self.partial('type.tmpl', ret.type.names) );
+                }
+            });
+        ?>
+        <i><small><?js= outputArray.join("|") ?></small></i>
+        <?js } ?>
+    </h4>
+
     <?js if (data.summary) { ?>
     <p class="summary"><?js= summary ?></p>
     <?js } ?>
@@ -15,7 +29,7 @@ var self = this;
     
     <?js if (data && data.description) { ?>
     <div class="description">
-        <?js= data.description ?>
+        <p style="margin-left: 20px;"><?js= data.description ?></p>
     </div>
     <?js } ?>
 
@@ -37,8 +51,18 @@ var self = this;
         <?js= this.partial('params.tmpl', params) ?>
     <?js } ?>
     
-    <?js= this.partial('details.tmpl', data) ?>
-    
+    <?js if (data.returns && returns.length) { ?>
+    <?js= this.partial('returnsHeading.tmpl', returns) ?>
+    <?js if (returns.length > 1) { ?><ul><?js
+        returns.forEach(function(r) { ?>
+            <li><?js= self.partial('returns.tmpl', r) ?></li>
+        <?js });
+    ?></ul><?js } else {
+        returns.forEach(function(r) { ?>
+            <?js= self.partial('returns.tmpl', r) ?>
+        <?js });
+    } } ?>
+
     <?js if (data.kind !== 'module' && data.requires && data.requires.length) { ?>
     <h5>Requires:</h5>
     <ul><?js data.requires.forEach(function(r) { ?>
@@ -78,21 +102,11 @@ var self = this;
             <?js= self.partial('exceptions.tmpl', r) ?>
         <?js });
     } } ?>
-
-    <?js if (data.returns && returns.length) { ?>
-    <?js= this.partial('returnsHeading.tmpl', returns) ?>
-    <?js if (returns.length > 1) { ?><ul><?js
-        returns.forEach(function(r) { ?>
-            <li><?js= self.partial('returns.tmpl', r) ?></li>
-        <?js });
-    ?></ul><?js } else {
-        returns.forEach(function(r) { ?>
-            <?js= self.partial('returns.tmpl', r) ?>
-        <?js });
-    } } ?>
     
     <?js if (data.examples && examples.length) { ?>
         <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
         <?js= this.partial('examples.tmpl', examples) ?>
     <?js } ?>
+
+    <?js= this.partial('details.tmpl', data) ?>
 </dd>

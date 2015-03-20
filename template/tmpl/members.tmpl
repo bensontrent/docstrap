@@ -7,7 +7,7 @@ var self = this;
 ?>
 <hr>
 <dt class="name" id="<?js= id ?>">
-    <h4><?js= data.prefixSymbol + name ?></h4>
+    <h4><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='~'? 'inner': '' ?> var <b><?js= name ?></b></h4>
 
     <?js if (data.summary) { ?>
     <p class="summary"><?js= summary ?></p>
@@ -16,7 +16,7 @@ var self = this;
 <dd>
     <?js if (data && data.description) { ?>
     <div class="description">
-        <?js= data.description ?>
+        <p style="margin-left:20px;"><?js= data.description ?></p>
     </div>
     <?js } ?>
 

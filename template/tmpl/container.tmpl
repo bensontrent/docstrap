@@ -25,12 +25,12 @@
             <sup class="variation"><?js= doc.variation ?></sup>
         <?js } ?></h2>
         <?js if (doc.classdesc) { ?>
-            <div class="class-description"><?js= doc.classdesc ?></div>
+            <div class="class-description"><p style="margin-left:20px;"><?js= doc.classdesc ?></p></div>
         <?js } ?>
     <?js } else if (doc.kind === 'module' && doc.modules) { ?>
         <?js doc.modules.forEach(function(module) { ?>
             <?js if (module.classdesc) { ?>
-                <div class="class-description"><?js= module.classdesc ?></div>
+                <div class="class-description"><p style="margin-left:20px;"><?js= module.classdesc ?></p></div>
             <?js } ?>
         <?js }) ?>
     <?js } ?>
@@ -41,7 +41,7 @@
     <div class="container-overview">
     <?js if (doc.kind === 'module' && doc.modules) { ?>
         <?js if (doc.description) { ?>
-            <div class="description"><?js= doc.description ?></div>
+            <div class="description"><p style="margin-left:20px;"><?js= doc.description ?></p></div>
         <?js } ?>
 
         <?js doc.modules.forEach(function(module) { ?>
@@ -51,7 +51,7 @@
         <?js= self.partial('method.tmpl', doc) ?>
     <?js } else { ?>
         <?js if (doc.description) { ?>
-            <div class="description"><?js= doc.description ?></div>
+            <div class="description"><p style="margin-left:20px;"><?js= doc.description ?></p></div>
         <?js } ?>
 
         <?js= self.partial('details.tmpl', doc) ?>

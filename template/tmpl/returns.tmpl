@@ -3,8 +3,13 @@ var data = obj;
 ?><?js 
 if (data && data.description)
 {
-	?><div class="param-desc">
-    		<?js= description ?>
-	</div><?js 
+	?><p class="param-desc" style="margin-left: 20px;">
+    <?js description = description.trim();
+    if (description.indexOf('-') === 0) {
+      description = description.substr(1);
+    }
+    description = description; ?>
+		<?js= description ?>
+	</p><?js 
 }
 ?>

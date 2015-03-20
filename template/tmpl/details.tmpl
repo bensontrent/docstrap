@@ -15,39 +15,39 @@ var self = this;
 	<?js } ?>
 
 	<?js if (data.version) {?>
-	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
-	<dd class="tag-version">
+	<dt class="tag-version method-doc-label method-doc-details-label">Version: <?js= version ?></dt>
+<!-- 	<dd class="tag-version">
 		<ul class="dummy">
 			<li><?js= version ?></li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
 	<?js if (data.since) {?>
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
-	<dd class="tag-since">
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: <?js= since ?></dt>
+<!-- 	<dd class="tag-since">
 		<ul class="dummy">
 			<li><?js= since ?></li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
 	<?js if (data.inherited && data.inherits) { ?>
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From: <?js= this.linkto(data.inherits, this.htmlsafe(data.inherits)) ?></dt>
+	<!-- <dd class="inherited-from">
 		<ul class="dummy">
 			<li>
 				<?js= this.linkto(data.inherits, this.htmlsafe(data.inherits)) ?>
 			</li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
     <?js if (data.overrides) { ?>
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="tag-overrides">Overrides: <?js= this.linkto(data.overrides, this.htmlsafe(data.overrides)) ?></dt>
+    <!-- <dd class="tag-overrides"><ul class="dummy"><li>
         <?js= this.linkto(data.overrides, this.htmlsafe(data.overrides)) ?>
-    </li></ul></dd>
+    </li></ul></dd> -->
     <?js } ?>
 
     <?js if (data.implementations && data.implementations.length) { ?>
@@ -103,49 +103,52 @@ var self = this;
 	<?js } ?>
 
 	<?js if (data.copyright) {?>
-	<dt class="tag-copyright method-doc-label method-doc-details-label">Copyright:</dt>
-	<dd class="tag-copyright">
+	<dt class="tag-copyright method-doc-label method-doc-details-label">Copyright: <li><?js= copyright ?></li></dt>
+	<!-- <dd class="tag-copyright">
 		<ul class="dummy">
 			<li><?js= copyright ?></li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
 	<?js if (data.license) {?>
-	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
-	<dd class="tag-license">
+	<dt class="tag-license method-doc-label method-doc-details-label">License: <li><?js= license ?></li></dt>
+	<!-- <dd class="tag-license">
 		<ul class="dummy">
 			<li><?js= license ?></li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
 	<?js if (data.defaultvalue) {?>
-	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
-	<dd class="tag-default">
+	<dt class="tag-default method-doc-label method-doc-details-label">Default Value: <?js= data.defaultvalue ?></dt>
+	<!-- <dd class="tag-default">
 		<ul class="dummy">
 			<li><?js= data.defaultvalue ?></li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
 
 
 	<?js if (data.meta && this.navOptions.outputSourceFiles) {?>
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:
+    <?js= self.linkto(meta.shortpath) ?><?js if (this.navOptions.linenums) {?>,
+     <?js= self.linkto(meta.shortpath, 'line ' + meta.lineno, null, 'sunlight-1-line-' + meta.lineno) ?><?js } ?>
+  </dt>
+<!-- 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
 				<?js= self.linkto(meta.shortpath) ?><?js if (this.navOptions.linenums) {?>,
 				 <?js= self.linkto(meta.shortpath, 'line ' + meta.lineno, null, 'sunlight-1-line-' + meta.lineno) ?><?js } ?>
 			</li>
 		</ul>
-	</dd>
+	</dd> -->
 	<?js } else if (data.meta && this.navOptions.outputSourcePath) { ?>
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <?js= meta.shortpath ?></dt>
+	<!-- <dd class="tag-source">
 		<?js= meta.shortpath ?>
-	</dd>
+	</dd> -->
 	<?js } ?>
 
 	<?js if (data.tutorials && tutorials.length) {?>
