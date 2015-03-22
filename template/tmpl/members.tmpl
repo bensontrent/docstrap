@@ -7,7 +7,10 @@ var self = this;
 ?>
 <hr>
 <dt class="name" id="<?js= id ?>">
-    <h4><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='~'? 'inner': '' ?> var <b><?js= name ?></b></h4>
+    <h4><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='#'? 'instance': '' ?>
+        <?js= (data.kind=='member'? 'var': 'type') ?>
+        <b><?js= name ?></b>
+    </h4>
 
     <?js if (data.summary) { ?>
     <p class="summary"><?js= summary ?></p>

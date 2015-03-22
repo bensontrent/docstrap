@@ -100,7 +100,7 @@ $( function () {
 	// } );
 
   $("h1,h2,h3,h4").each(function() {
-  	$(this).css('padding-top', 70).css('margin-top', -70);
+  	$(this).css('padding-top', 65).css('margin-top', -65);
   });
 
 	$( "#toc" ).toc( {
@@ -157,7 +157,7 @@ $( function () {
 <script>
 	$( function () {
 		$( '#main' ).localScroll( {
-			offset : { top : -60 } //offset by the height of your header (give or take a few px, see what works for you)
+			offset : { top : -70 } //offset by the height of your header (give or take a few px, see what works for you)
 		} );
 		$( "dt.name" ).each( function () {
 			var $this = $( this ).find("h4");
