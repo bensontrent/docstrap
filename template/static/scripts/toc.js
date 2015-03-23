@@ -77,6 +77,7 @@ $.fn.toc = function(options) {
 
       ul.append(li);
     });
+    // Fixed highlighting of the very last toc item.
     headingOffsets.push(999999999);
     el.html(ul);
   });
