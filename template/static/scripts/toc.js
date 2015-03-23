@@ -58,7 +58,8 @@ $.fn.toc = function(options) {
       var $h = $(heading);
       headingOffsets.push($h.offset().top - opts.highlightOffset);
 
-      //add anchor
+      // add anchor and wrap it in a container.
+      $h.wrap('<div>');
       var anchor = $('<span/>').attr('id', opts.anchorName(i, heading, opts.prefix)).insertBefore($h);
 
       //build TOC item
@@ -76,6 +77,7 @@ $.fn.toc = function(options) {
 
       ul.append(li);
     });
+    headingOffsets.push(999999999);
     el.html(ul);
   });
 };
