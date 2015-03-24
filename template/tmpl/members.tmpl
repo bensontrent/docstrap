@@ -7,7 +7,7 @@ var self = this;
 ?>
 <hr>
 <dt class="name" id="<?js= id ?>">
-    <h4><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='#'? 'instance': '' ?>
+    <h4><toc class="small"><i><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol==''? 'inner': '' ?></i></toc><toc> </toc>
         <?js= (data.kind=='typedef'? 'typedef ': '') + 'var' ?>
         <b><toc><?js= name ?></toc></b>
     </h4>
