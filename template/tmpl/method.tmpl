@@ -5,7 +5,7 @@ var self = this;
 ?>
 <hr>
 <dt>
-    <h4 class="name" id="<?js= id ?>"><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='~'? 'inner': '' ?> <?js= (kind === 'class' ? 'new ' : (data.kind === 'typedef'? 'typedef ': '') + 'function ') ?><toc><b><?js= name ?></b><?js= (kind !== 'event' ? data.signature : '') ?></toc>
+    <h4 class="name" id="<?js= id ?>"><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='~'? 'inner': '' ?> <?js= (kind === 'class' ? '<toc>new </toc>' : (data.kind === 'typedef'? 'typedef ': '') + 'function ') ?><toc><b><?js= name ?></b><?js= (kind !== 'event' ? data.signature : '') ?></toc>
         <?js if (data.returns && returns.length) { ?>
         <?js= '>' ?>
         <?js

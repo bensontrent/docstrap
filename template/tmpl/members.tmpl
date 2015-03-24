@@ -9,7 +9,7 @@ var self = this;
 <dt class="name" id="<?js= id ?>">
     <h4><?js= data.prefixSymbol=='.'? 'static': data.prefixSymbol=='#'? 'instance': '' ?>
         <?js= (data.kind=='typedef'? 'typedef ': '') + 'var' ?>
-        <b><?js= name ?></b>
+        <b><toc><?js= name ?></toc></b>
     </h4>
 
     <?js if (data.summary) { ?>

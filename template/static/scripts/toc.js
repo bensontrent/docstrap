@@ -100,7 +100,7 @@ jQuery.fn.toc.defaults = {
     $heading.find('toc').each(function() {
       result += $(this).text();
     });
-    return result || $heading.text();
+    return result.replace(/\(([^)]+)\)/g, '(...)') || $heading.text();
   },
   itemClass: function(i, heading, $heading, prefix) {
     return prefix + '-' + $heading[0].tagName.toLowerCase();
