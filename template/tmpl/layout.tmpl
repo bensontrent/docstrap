@@ -144,10 +144,10 @@ $( function () {
 		enableDoclinks : true
 	} );
 
-	// $("a[name^='sunlight-1-line-']").each(function() {
-	// 	$(this).wrap('<div id="' + this.name + '" style="padding-top:65px;margin-top:-65px;display:inline-block;" class="sunlight-line-container"></div>');
-	// 	this.name = '';
-	// });
+	$("a[name^='sunlight-1-line-']").each(function() {
+		$(this).wrap('<div id="' + this.name + '" style="padding-top:65px;margin-top:-65px;display:inline-block;" class="sunlight-line-container"></div>');
+		this.name = '';
+	});
 
   $("h1,h2,h3,h4").each(function() {
   	$(this).css('padding-top', 50).css('margin-top', -50);
