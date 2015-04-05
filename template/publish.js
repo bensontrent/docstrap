@@ -32,6 +32,7 @@ var indexUrl = helper.getUniqueFilename('index');
 
 var navOptions = {
   logoFile: conf.logoFile,
+  systemTitle: conf.systemTitle || "Documentation",
   systemName: conf.systemName || "Documentation",
   navType: conf.navType || "vertical",
   footer: conf.footer || "",
