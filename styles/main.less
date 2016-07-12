@@ -1,11 +1,14 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @import "variables.less";
 @import "bootswatch.less";
+@font-family-sans-serif:  "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+@web-font-path: "https://fonts.googleapis.com/css?family=Noto+Sans:300,400,700";
 
 @headerHeight: 62px;
 
 #main {
   margin-top : @headerHeight;
+  padding: 0 10px;
 }
 
 .navbar-fixed-top {
@@ -25,12 +28,13 @@ img.branding-logo{
 #toc {
   position   : fixed;
   top        : @headerHeight;
-  right      : 0;
+  left      : 0;
   @toc-bottom: @headerHeight + 10px;
   max-height : 82%;
   max-height : ~"calc(100% - @{toc-bottom})";
-  overflow   : auto;
-  padding    : 5px;
+  overflow-y   : auto;
+  overflow-x: hidden;
+  padding    : 4px;
 
   .toc-h1 {
     margin-left  : 2px;
@@ -43,13 +47,14 @@ img.branding-logo{
   }
 
   .toc-h3 {
-    margin-left  : 14px;
+    margin-left  : 10px;
     margin-right : 7px;
   }
 
   .toc-h4 {
-    margin-left  : 21px;
-    margin-right : 7px;
+    margin-left  : 14px;
+    margin-right : 3px;
+    word-break: break-word;
   }
 }
 
@@ -94,8 +99,10 @@ code {
 }
 
 .member-collapsed {
-  background-color : @navbar-inverse-bg;
-  color            : @navbar-inverse-color;
+  background-color : inherit;
+}
+.member-collapsed:hover {
+     background-color: #f5f5f5;
 }
 
 .member-open {
@@ -106,13 +113,8 @@ code {
 .member {
   .transition(background-color 0.5s linear);
   .transition(color 0.5s linear);
-  .border-top-radius(5px);
-  .border-right-radius(5px);
-  .border-bottom-radius(5px);
-  .border-left-radius(5px);
+
   padding : 3px;
-  margin-top:5px;
-  margin-bottom:5px;
 }
 
 .member-name{
@@ -120,6 +122,9 @@ code {
   margin-top: -100px !important;
 }
 
+hr {
+    margin:0;
+}
 
 .sunlight-highlighted {
   margin           : 0;

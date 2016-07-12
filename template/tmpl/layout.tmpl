@@ -17,9 +17,9 @@
 
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top <?js= this.navOptions.inverseNav ? 'navbar-inverse' : '' ?>">
-<div class="container">
-	<div class="navbar-header">
+<div class="fluid-container navbar navbar-default navbar-fixed-top <?js= this.navOptions.inverseNav ? 'navbar-inverse' : '' ?>">
+<div class="col-md-12">
+	<div class="navbar-header col-md-1">
 		<a class="navbar-brand" href="<?js= this.nav.index.link ?>"><?js if(this.navOptions.logoFile) { ?><img class="branding-logo" src="<?js= this.navOptions.logoFile ?>"
 		alt="logo"/><?js } ?><?js= this.nav.index.title ?></a>
 		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
@@ -29,6 +29,16 @@
         </button>
 	</div>
 	<div class="navbar-collapse collapse" id="topNavigation">
+    <div class="col-sm-2 col-md-2">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
 		<ul class="nav navbar-nav">
 			<?js this.nav.topLevelNav.forEach(function(entry){ ?>
 			<li class="dropdown">
@@ -39,29 +49,20 @@
 			</li>
 			<?js }); ?>
 		</ul>
-		<div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
+
 	</div>
 
 </div>
 </div>
 
 
-<div class="container" id="toc-content">
+<div class="fluid-container" id="toc-content">
 <div class="row">
 
 	<?js if(docs && docs[0].kind !== "source"){ ?>
-	<div class="col-md-8">
+	<div class="col-md-9 col-md-push-3">
 	<?js } else { ?>
-	<div class="col-md-12">
+	<div class="col-md-10 col-md-push-1">
 	<?js } ?>
 		<div id="main">
 			<?js= content ?>
@@ -79,6 +80,7 @@
 </div>
 </div>
 
+
 <div class="modal fade" id="searchResults">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -94,7 +96,11 @@
   </div><!-- /.modal-dialog -->
 </div>
 
-<footer>
+	<?js if(docs && docs[0].kind !== "source"){ ?>
+	<footer class="col-md-9 col-md-push-3">
+	<?js } else { ?>
+	<footer class="col-md-10 col-md-push-1">
+	<?js } ?>
 <?js if (that.navOptions.footer.length > 0){ ?>
 	<?js= that.navOptions.footer ?>
 <?js } ?>
@@ -113,6 +119,7 @@
 </footer>
 
 <script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/jquery.slimscroll.js"></script>
 <script src="scripts/toc.js"></script>
 <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
 
@@ -242,7 +249,17 @@ $( function () {
 <script type="text/javascript">
 	$(document).ready(function() {
 		SearcherDisplay.init();
-	});
+
+        $(function(){
+            $('#main').slimScroll({
+               height: '100%'
+            });
+            $('.list-group').slimScroll({
+               height: '100%'
+            });
+        });
+    });
+
 </script>
 
 </body>
