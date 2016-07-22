@@ -176,6 +176,9 @@ var tasks = {
 					'bower_components/jquery/dist/jquery.min.js',
 					'bower_components/sunlight/src/sunlight.js',
 					'bower_components/sunlight/src/lang/sunlight.xml.js',
+                    'bower_components/sunlight/src/lang/sunlight.javascript.js',
+                    'bower_components/sunlight/src/lang/sunlight.bash.js',
+                    'bower_components/sunlight/src/lang/sunlight.css.js',
 					'bower_components/sunlight/src/**/*.js',
 
 					'bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
