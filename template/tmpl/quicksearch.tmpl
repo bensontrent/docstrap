@@ -5,7 +5,7 @@
     <script src="scripts/docstrap.lib.js"></script>
     <script src="scripts/lunr.min.js"></script>
     <script src="scripts/fulltext-search.js"></script>
-
+    <script src="scripts/jquery.slimscroll.js"></script>
     <script type="text/x-docstrap-searchdb">
     <%= searchableDocuments %>
     </script>
@@ -13,6 +13,15 @@
     <script type="text/javascript">
         $(document).ready(function() {
             Searcher.init();
+$(function(){
+    $('#main').slimScroll({
+        height: '250px'
+    });
+     $('.list-group').slimScroll({
+        height: '250px'
+    });
+});
+
         });
 
         $(window).on("message", function(msg) {

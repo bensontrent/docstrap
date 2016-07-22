@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:300,400,700");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6906,6 +6906,7 @@ a.list-group-item-danger.active:focus {
 }
 #main {
   margin-top: 62px;
+  padding: 0 10px;
 }
 .navbar-fixed-top .navbar-inner {
   padding-left: 20px;
@@ -6920,27 +6921,37 @@ img.branding-logo {
 #toc {
   position: fixed;
   top: 62px;
-  right: 0;
+  left: 0;
   max-height: 82%;
   max-height: calc(100% - 72px);
-  overflow: auto;
-  padding: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px;
 }
 #toc .toc-h1 {
   margin-left: 2px;
   margin-right: 2px;
+  fong-weight: 700;
+  font-variant-caps: small-caps;
 }
 #toc .toc-h2 {
   margin-left: 7px;
   margin-right: 7px;
 }
 #toc .toc-h3 {
-  margin-left: 14px;
+  margin-left: 10px;
   margin-right: 7px;
 }
 #toc .toc-h4 {
-  margin-left: 21px;
-  margin-right: 7px;
+  margin-left: 14px;
+  margin-right: 3px;
+  word-break: break-word;
+}
+.type-signature {
+  font-weight: 700;
+}
+.list-group-item {
+  padding: 7px 5px;
 }
 .copyright {
   font-size: 90%;
@@ -6977,8 +6988,10 @@ code {
   margin-top: -62px;
 }
 .member-collapsed {
-  background-color: #2780E3;
-  color: #fff;
+  background-color: inherit;
+}
+.member-collapsed:hover {
+  background-color: #f5f5f5;
 }
 .member-open {
   background-color: inherit;
@@ -6991,17 +7004,14 @@ code {
   -webkit-transition: color 0.5s linear;
   -o-transition: color 0.5s linear;
   transition: color 0.5s linear;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
   padding: 3px;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .member-name {
   padding-top: 100px !important;
   margin-top: -100px !important;
+}
+hr {
+  margin: 0;
 }
 .sunlight-highlighted {
   margin: 0;
@@ -7058,4 +7068,80 @@ code {
   .dropdown-menu {
     max-height: none;
   }
+}
+/* Surinami */
+.link--surinami {
+  /* font-family: 'Playfair Display', serif; */
+  font-weight: 400;
+  /* margin-bottom: -2em; */
+  text-transform: uppercase;
+  font-size: 1em;
+  color: #3A4945;
+  /* width: 3px; */
+  padding: 0 0 0.125em;
+}
+.link--surinami::before,
+.link--surinami::after {
+  content: '';
+  width: 445%;
+  height: 10px;
+  z-index: -1;
+  /* top: 2px; */
+  background: #212eda;
+  position: absolute;
+  -webkit-transform: scale3d(0, 2, 1);
+  transform: scale3d(0, 2, 1);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.7s;
+}
+.link--surinami::before {
+  right: -75px;
+  top: 0;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 70%;
+}
+.link--surinami::after {
+  left: -57px;
+  bottom: 1px;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+.link--surinami:hover::before,
+.link--surinami:hover::after {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+.link--surinami span {
+  position: relative;
+  /* width: 300px; */
+  transition: color 0.5s;
+}
+.link--surinami:hover span {
+  color: transparent;
+}
+.link--surinami span::before,
+.link--surinami span::after {
+  position: absolute;
+  width: 200%;
+  color: #fff;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+.link--surinami span::before {
+  content: 'JHA';
+  left: -82px;
+  bottom: 0px;
+  transform: translate3d(50px, 3px, 0);
+}
+.link--surinami span::after {
+  content: 'HTML Controls';
+  right: -18px;
+  bottom: 0px;
+  white-space: nowrap;
+  transform: translate3d(-40px, 0, 0);
+}
+.link--surinami:hover span::before,
+.link--surinami:hover span::after {
+  opacity: 1;
+  transform: translate3d(0px, 0, 0);
 }
