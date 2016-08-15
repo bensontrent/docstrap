@@ -6867,27 +6867,33 @@ img.branding-logo {
 #toc {
   position: fixed;
   top: 62px;
-  right: 0;
+  left: 0;
   max-height: 82%;
   max-height: calc(100% - 72px);
-  overflow: auto;
-  padding: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px;
 }
 #toc .toc-h1 {
   margin-left: 2px;
   margin-right: 2px;
+  fong-weight: 700;
+  font-variant-caps: small-caps;
 }
 #toc .toc-h2 {
-  margin-left: 7px;
+  margin-left: 2px;
   margin-right: 7px;
 }
 #toc .toc-h3 {
-  margin-left: 14px;
+  font-size: 85%;
+  margin-left: 17px;
   margin-right: 7px;
 }
 #toc .toc-h4 {
-  margin-left: 21px;
-  margin-right: 7px;
+  font-size: 85%;
+  margin-left: 35px;
+  margin-right: 3px;
+  word-break: break-word;
 }
 .copyright {
   font-size: 90%;

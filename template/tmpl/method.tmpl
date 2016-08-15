@@ -1,16 +1,20 @@
+
 <?js
 var data = obj;
 var self = this;
 ?>
-<hr>
-<dt>
-    <h4 class="name" id="<?js= id ?>"><?js= data.attribs + (kind === 'class' ? 'new ' : '') + name + (kind !== 'event' ? data.signature : '') ?></h4>
-    
+<td
+    <h4 class="name" id="<?js= id ?>"></h4>
+
     <?js if (data.summary) { ?>
     <p class="summary"><?js= summary ?></p>
     <?js } ?>
-</dt>
-<dd>
+</td>
+
+<td
+    <?js= data.attribs + (kind === 'class' ? 'new ' : '') + name + (kind !== 'event' ? data.signature : '') ?>
+</td>
+<td>
 
     <?js if (data && data.description) { ?>
     <div class="description">
@@ -94,4 +98,4 @@ var self = this;
         <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
         <?js= this.partial('examples.tmpl', examples) ?>
     <?js } ?>
-</dd>
+</td>
