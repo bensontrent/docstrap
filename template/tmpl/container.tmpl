@@ -119,9 +119,25 @@
     ?>
         <h3 class="subsection-title">Members</h3>
 
-        <dl><?js members.forEach(function(p) { ?>
+        <table class="params table table-striped">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+        <th>Default</th>
+
+ <th>Description</th>
+        <th class="last">Source</th>
+    </tr>
+    </thead>   <tbody>
+<?js members.forEach(function(p) { ?>
             <?js= self.partial('members.tmpl', p) ?>
-        <?js }); ?></dl>
+        <?js }); ?></tbody></table>
     <?js } ?>
 
     <?js
