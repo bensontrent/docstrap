@@ -5238,18 +5238,18 @@ a.thumbnail.active {
 }
 a.list-group-item,
 button.list-group-item {
-  color: #555;
+  color: #393939;
 }
 a.list-group-item .list-group-item-heading,
 button.list-group-item .list-group-item-heading {
-  color: #333;
+  color: #222;
 }
 a.list-group-item:hover,
 button.list-group-item:hover,
 a.list-group-item:focus,
 button.list-group-item:focus {
   text-decoration: none;
-  color: #555;
+  color: #393939;
   background-color: #f5f5f5;
 }
 button.list-group-item {
@@ -6922,8 +6922,7 @@ img.branding-logo {
   position: fixed;
   top: 62px;
   left: 0;
-  max-height: 82%;
-  max-height: calc(28%);
+  bottom:0;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2px;
