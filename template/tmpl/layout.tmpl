@@ -114,7 +114,7 @@
 	<?js if (that.navOptions.includeDate) { ?>
 		on <?js= (that.moment().format(that.navOptions.dateFormat)) ?>
 	<?js } ?>
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+	using the <a href="https://github.com/bensontrent/docstrap">DocStrap template</a>.
 </span>
                         </footer>
 
@@ -130,6 +130,19 @@ $( function () {
 
 		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
 	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+		scrollTo    : "100px"
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
 
 	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
 		var $this = $( this );

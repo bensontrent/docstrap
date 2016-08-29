@@ -3974,6 +3974,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #4E5D6C;
+  background-color: #4e5d6c;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
 }
 .nav > li.disabled > a {
   color: #4E5D6C;
@@ -6981,6 +6986,37 @@ a.list-group-item-danger.active:focus {
   padding-left: 20px;
   padding-right: 20px;
 }
+.navbar.navbar-inverse .dropdown-menu {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 300px;
+  overflow: auto;
+  width: 300px;
+  background-color: #df691a;
+}
+.navbar.navbar-inverse .dropdown-menu a,
+.navbar.navbar-inverse .dropdown-menu a:visited {
+  color: #ebebeb;
+}
+.navbar.navbar-inverse .dropdown-menu a:hover {
+  color: #ebebeb;
+  background-color: #c85e17;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.navbar.navbar-inverse .dropdown-menu a:active {
+  color: #ebebeb;
+  background-color: #c85e17;
+}
+.navbar.navbar-inverse .dropdown-menu a {
+  padding-left: 0;
+  padding-right: 5px;
+  font-weight: 500;
+  font-size: 115%;
+}
+
 img.branding-logo {
   max-height: 30px;
   display: inline-block;
