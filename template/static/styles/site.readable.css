@@ -6857,8 +6857,7 @@ img.branding-logo {
   position: fixed;
   top: 62px;
   right: 0;
-  max-height: 82%;
-  max-height: calc(100% - 72px);
+  bottom:0;
   overflow: auto;
   padding: 5px;
 }

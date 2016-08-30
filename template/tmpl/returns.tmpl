@@ -1,10 +1,14 @@
 <?js
 var data = obj;
 if (data && data.description) {
-?>
-<div class="param-desc">
-    <?js= description ?>
-</div>
+	?>
+    <div class="param-desc">
+    <?js description = description.trim();
+    if (description.indexOf('-') === 0) {
+      description = description.substr(1);
+    } description = description; ?>
+		<?js= description ?>
+	</div>
 <?js } ?>
 
 <?js if (data && data.type && data.type.names) {?>
