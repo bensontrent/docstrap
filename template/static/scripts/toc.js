@@ -40,8 +40,8 @@
       return;
     }
     initialised = true;
-    navbarHeight = $('.navbar').height();
-    navbarOffset = opts.navbarOffset;
+    navbarHeight = $('.navbar').height()
+    navbarOffset = opts.navbarOffset || 10;
 
     // some browsers move the offset after changing location.
     // also catch external links coming in
